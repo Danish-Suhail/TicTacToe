@@ -25,11 +25,3 @@ function App() {
 }
 
 export default App;
-
-
-// {/* <PrivateRoute firstPlayer = {names.firsPlayer} secondPlayer ={names.secondPlayer}/>
-        // //   /* <Board />
-        // // </PrivateRoute> */
-        //  > */}
-        //   {/* <Route path = 'play' element = <Board />/> */}
-        // </Route>
