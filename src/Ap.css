@@ -1,0 +1,16 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #23272f;
+    
+  }
+.right-border{
+  border-right: 0.2em solid #0074a6;
+}
+
+.bottom-border{
+    border-bottom: 0.2em solid #0074a6;
+  }

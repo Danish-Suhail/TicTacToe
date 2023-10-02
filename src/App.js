@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Board from "./Components/Board";
+import { Route, Routes} from 'react-router-dom';
+import Home from "./Components/Home";
+import {useContext} from 'react';
+import PrivateRoute from "./Components/PrivateRoute";
+import { Names } from "./Components/Context";
+import './Ap.css';
+import NavBar from "./Components/NavBar";
+
 
 function App() {
+  const {names} = useContext(Names);
   return (
+    <>
+      <NavBar />
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path = '/' element = <Home />/>
+        {names.firstPlayer || names.secondPlayer !== "" ? <Route path = '/Game' element = <Board />/> : <Route path="/Game" element = <PrivateRoute/>/>}
+        
+      </Routes>
     </div>
+    </>
   );
 }
 
 export default App;
+
+
+// {/* <PrivateRoute firstPlayer = {names.firsPlayer} secondPlayer ={names.secondPlayer}/>
+        // //   /* <Board />
+        // // </PrivateRoute> */
+        //  > */}
+        //   {/* <Route path = 'play' element = <Board />/> */}
+        // </Route>
