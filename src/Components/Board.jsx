@@ -45,14 +45,8 @@ const Board = () => {
         else if(boxValue[a] === "O"){
             return o
         }
-      //   const areAllTilesFilledIn = boxValue.every((tile) => tile !== null);
-      // if (areAllTilesFilledIn) {
-      //   return 'Draw';
-      // }
       }
-      // return;
     }
-    // return false;
       const areAllTilesFilledIn = boxValue.every((tile) => tile !== null);
       if (areAllTilesFilledIn) {
         return 'Draw';
@@ -63,14 +57,10 @@ const Board = () => {
   };
 
   const isWinner = checkWinner();
-  // console.log("winner is ", isWinner)
-  // console.log(x, y)
 
 
   function handleClick(index) {
-    // console.log(index);
     if (boxValue[index] !== null) {
-        // console.log(index);
       return;
     }
     const copyValue = [...boxValue];
@@ -116,7 +106,6 @@ const Board = () => {
         </>
       ) : (
         <div>
-          {/* <div className="bg-[#0074a6] text-white text-4xl my-8">{isX ? x : y}'s turn</div> */}
           <div className="flex justify-center items-center">
             <div className = " right-border bottom-border cursor-pointer"><Square onClick={() => handleClick(0)} value={boxValue[0]}/></div>
             <div className = " right-border bottom-border cursor-pointer"><Square onClick={() => handleClick(1)} value={boxValue[1]} /></div>
@@ -131,7 +120,6 @@ const Board = () => {
           <div className = " right-border cursor-pointer"><Square onClick={() => handleClick(6)} value={boxValue[6]} /></div>
           <div className = " right-border cursor-pointer"><Square onClick={() => handleClick(7)} value={boxValue[7]} /></div>
           <div className = "cursor-pointer"><Square onClick={() => handleClick(8)} value={boxValue[8]} /></div>
-          {/* <RxCross2 className=" text-8xl"/> */}
           </div>
         </div>
       )}
